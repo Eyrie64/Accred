@@ -1,0 +1,49 @@
+.programmes {
+    display: flex;
+    align-items: center;
+    z-index: -1;
+  }
+  
+  .up {
+    align-items: center;
+  }
+  
+  .search__nav {
+    display: flex;
+    align-items: center;
+    position:absolute;
+    top: 6em;
+    left: 25vw;
+  }
+  
+  .programme__search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .programme__searchInput {
+    height: 12px;
+    padding: 10px;
+    min-width: 20vw;
+  }
+  
+  .programme__searchInput:focus {
+    outline: none;
+  }
+  
+  .programme__searchIcon {
+    padding: 5px;
+    height: 25px !important;
+    background-color: #3f51b5;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .table {
+    margin-left: 9%;
+    min-width: 81vw;
+    position: absolute;
+    top:9em;
+  }
+  
+  

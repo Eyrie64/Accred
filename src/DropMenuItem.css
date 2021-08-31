@@ -1,0 +1,29 @@
+.menu-item {
+    align-items: center;
+    transition: 500ms;
+    padding-right: 10px;
+    color:#111;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: auto;
+  }
+
+  .items{
+     font-size: 20;
+  }
+
+  .item__large div{
+     display: flex;
+     flex: 1;
+     justify-content: center;
+     flex-direction: column;
+  }
+
+  .item__large:hover{
+     background-color: #c3ccfa;
+     box-shadow: 0px 4px 4px rgba(35, 36, 119, 0.25);
+     border-radius: 5px;
+     
+  }
+  

@@ -1,0 +1,104 @@
+.users {
+    display: flex;
+    align-items: center;
+    z-index: -1;
+  }
+  
+  .dress_up {
+    align-items: center;
+  }
+  
+  .sub__nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: absolute;
+    top: 6em;
+    left: 21.5vw;
+  }
+  
+  .user__search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user__searchInput {
+    height: 12px;
+    padding: 10px;
+    min-width: 20vw;
+  }
+  
+  .user__searchInput:focus {
+    outline: none;
+  }
+  
+  .user__searchIcon {
+    padding: 5px;
+    height: 25px !important;
+    background-color: #3f51b5;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .user__btn {
+    padding: 10px 5px;
+    display: flex;
+  }
+  
+  .btn{
+      padding: 9px;
+      width: 10;
+      border: none;
+      color: white;
+      background-color: #3f51b5;
+      border-radius: 3px;
+      font-size: 15px;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+  }
+  
+  .usertable {
+    margin-left: 9%;
+    min-width: 81vw;
+    position: absolute;
+    top: 10em;
+  }
+  
+  .content{
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+  
+  .content label{
+    text-align: left;
+    display: block;
+    font-size: 12px;
+  }
+  
+  .content input, .content select{
+    width: 100%;
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+  } 
+  
+  .content input, .content select:focus{
+    outline: none;
+  }
+  
+  .content button{
+    background: #3f51b5;
+    color: #fff;
+    border: 0;
+    margin-top: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  
