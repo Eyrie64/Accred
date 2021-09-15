@@ -213,7 +213,7 @@ const Programme = () => {
                 <div className="dropbox"></div>
                 <br />
                 <br />
-                {{ url }}
+                {url}
               </DropboxChooser>
             </div>
           </ul>
