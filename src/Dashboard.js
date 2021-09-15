@@ -1,12 +1,28 @@
+import { useEffect, useState } from "react";
 import "./Dashboard.css";
 import AnalyticsCard from "./Card";
 import LoopIcon from "@material-ui/icons/Loop";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
-import Chart from "./Chart";
-import LINE from "./LINE";
+// import Chart from "./Chart";
+// import LINE from "./LINE";
+import { requestAuthGet } from "./hooks";
 
 function Dashboard() {
+  const [programmesCount, setProgrammesCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log("run");
+    void (async function () {
+      console.log("async");
+      const { data: progs } = await requestAuthGet("programmes");
+      //console.log("progs.length: ", progs.length);
+      setProgrammesCount(() => progs.length);
+      setIsLoading(false);
+    })();
+  }, [isLoading]);
+
   return (
     <div className="dashboard">
       <div className="dashboard__top">
@@ -31,7 +47,7 @@ function Dashboard() {
         <AnalyticsCard
           title="NUMBER OF PROGRAMMES"
           myc="#4989E9"
-          value={0}
+          value={programmesCount}
           iconcolor="#3868B0"
           bgTextcolor="#3868B0"
           Icon={
@@ -40,9 +56,8 @@ function Dashboard() {
         />
       </div>
       <div className="row__back">
-      <Chart/> 
-       <LINE/>
-        
+        {/* <Chart />
+        <LINE /> */}
       </div>
     </div>
   );

@@ -3,14 +3,12 @@ import AnalyticsCard from "./Card";
 import LoopIcon from "@material-ui/icons/Loop";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import ChromeReaderModeIcon from "@material-ui/icons/ChromeReaderMode";
-import Chart from "./Chart";
 import BarChartIcon from "@material-ui/icons/BarChart";
 
 function Dashboard() {
-    
   return (
     <div className="dashboard">
-        For school
+      For school
       <div className="dashboard__top">
         <AnalyticsCard
           title="ACCREDITED PROGRAMMES"
@@ -50,7 +48,6 @@ function Dashboard() {
           bgTextcolor="#049301"
           Icon={<BarChartIcon className="bar" style={{ fontSize: 110 }} />}
         />
-        {/* <Chart/> */}
       </div>
     </div>
   );

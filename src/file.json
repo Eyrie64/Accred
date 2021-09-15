@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "accred-326112",
+  "private_key_id": "5d833f81c87c967c1576442ae389f988d0fe8d20",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDPO9VVEG8c/0Mw\nxzhLwgwfTFF7Gk/ETKVrRlbE2DP08IEbUbFewpTMfd/cOZtrc2jeaZffETNt6iUA\nt48ZKGMo7TFFXEmFof5GLjSj9O7Xx7tG+MuHV6qZUdUJlk6+Q4bWVf2TqGu4QJ8T\ngCO1zPbA2HABUoaVZ6yNsgNvGmR2VdyErBpOAAim6E5jZxtvc97Ji7DektJPUELd\nQwVUvTxXPbHALHnEUtRuXKWV//0iVjRiC7twQDSg36x5E577aeit/pDqSUPCdnzT\n8mT5dAO7GniDhJp2LYia0xpyTn1TDnOmJjxmtGeSDLdnl0hfGqaUGhOhLt6QPdw2\nVAq7l9/LAgMBAAECggEAYTSqs7T6ubpOtRGtqXODJicxTTIhWm2tZi1fRAQ6EtnB\nZaQjM9TH4Ufl+rIW4gcHmNQlBeBWpGchJj3z5JQaNzdTVjqczg8Xa6n+zS1130dz\n5C2NopWPk01cRZv4oayhEebSBDILHSlKtOX1WjCjSf/8QdKJCInR2cE3dSUHHK3/\nkuaOeTnxl47LkqRpTQvyEFkFyHgOH115U/RN4FJePurF0mX+xakfAWCNKKK934jH\ngpOhpfhDL47k3tJ6OVpmVb/7RBoH5NWYEhgXlM98Fi84GoESt1640LMZ793xSdNJ\nbDT1e8KOKkcnMNec3XxqjbhrsshOQz72rppL5vSyOQKBgQDshC3SwwhNEDmXQSoS\n9gVKsM7IiIujI7S588l5aTZzqC6mu1r7UhYdSTl1FfF85xlFgL7GlO19L2aqY53m\nUaUm3PF4jc6J7jpp/rWzsDqnfLjbo/e9l5nIPSzV7EJUafgtBSGU3NVm4/4tCUZ5\nVgY6jxBDYOxgePsQd3d68rqUXwKBgQDgTh9ZfZ+T78BvfMbSnZ0N3GdIG6+bGfTR\naKya0B5CTF4kIjECs0soh7LjAo01xYve1oxnI+hWhxUOZPpDgMQzpVhV063EG0HN\nxB9XHXp5mfMRvMGCHpRqhV9+e/jYwkaB7Q4AKeUMlNzv6mvoyKE705SoIHK3sEVn\nLR6lRrLMFQKBgH4lOXNxxhmkD7NWdCRMxyHBD2jxOti2EIwlNE3nCb3B86/FuY7V\nhynzhgumunfNojLpqdasU8Yy4+T44JyY6ybBLKEJsSDryIgD69F8qqvt34J1/4pF\nMyYTSriGHBJ9unn4hKKq7b7E1yoaClZoxUWyTBBDv47st6terIEMuOqtAoGAX44I\nXuhcZfpaAWSnkqvgbzo4qYhZ2/pHyDoOZflJGrdL15rVRDA7UW3VsE2y+HhKqMi/\nkWTDorDzMGmmD8G4U8QZiJ6fxQ5TjyQAsez18v25hhHiYdtDIMnmr4yCq1zACrOB\nJmKymBSGtpIoHEf0H/d3udPw6v3l4xlel8wxeS0CgYEA5opdG5m1e+Qaoz9RYZIu\n9iG5H/5fFmHb2KWqLl6O5SGAGr5hv4RTSslYr2Cn6vWVfdrwTZTaQOWCLSs2SuK7\nn/sfldpo/JIkh46FL59hh3YlzwaKsEFpjDrUZnDuYDoVOvrHJlqnNStqUDdfNGaY\nHAXhUjAQLI9/MRjAYTd1C40=\n-----END PRIVATE KEY-----\n",
+  "client_email": "accred@accred-326112.iam.gserviceaccount.com",
+  "client_id": "102677249310307485868",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/accred%40accred-326112.iam.gserviceaccount.com"
+}

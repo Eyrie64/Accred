@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "./contexts/AuthContext";
 import logo from "../src/Images/logo3.png";
 import BackgroundSlider from "react-background-slider";
@@ -10,12 +11,11 @@ import image4 from "../src/Images/image4.jpg";
 import image5 from "../src/Images/image5.jpg";
 import "./Login.css";
 
-
 const Login = () => {
   const [useremail, setuseremail] = useState("");
   const [psstype, setpsstype] = useState("");
   const { authenticate } = useContext(AuthContext);
-  
+  const history = useHistory();
 
   const login = (e) => {
     e.preventDefault();
@@ -24,19 +24,22 @@ const Login = () => {
       password: psstype,
     })
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("email", res.data.data.user.email);
+        localStorage.setItem("user", res.data.data.user.user);
         authenticate();
-
-        // history.push("/dashboard");
+        window.location.reload();
+        throw new Error();
       })
       .catch(console.log);
   };
   return (
     <div className="login">
-      <BackgroundSlider 
-      images = {[image1, image2, image3, image4, image5]} 
-      duration = {3} transition ={2}
+      <BackgroundSlider
+        images={[image1, image2, image3, image4, image5]}
+        duration={3}
+        transition={2}
       />
       <img src={logo} alt=" " />
       <form>
@@ -63,6 +66,7 @@ const Login = () => {
             setpsstype(e.target.value);
           }}
         />
+
         <button onClick={login}>LOGIN</button>
       </form>
     </div>
