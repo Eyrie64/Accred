@@ -55,10 +55,7 @@ function Dashboard() {
           }
         />
       </div>
-      <div className="row__back">
-        {/* <Chart />
-        <LINE /> */}
-      </div>
+      <div className="row__back"></div>
     </div>
   );
 }

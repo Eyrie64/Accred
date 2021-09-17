@@ -1,8 +1,8 @@
 // approvals
 
-const phase1 = ["Dean of Schools/Directors"];
+const phase1 = ["Dean of School/Director"];
 
-const phase2 = ["Provost"];
+const phase2 = ["Provost of College"];
 
 const phase3 = ["Director of Academic Quality Assurance"];
 

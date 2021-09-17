@@ -1,43 +1,43 @@
 import "./Ugreq.css";
 import TextField from "@material-ui/core/TextField";
 import { useState } from "react";
+import { useHistory } from "react-router";
 import DropboxChooser from "react-dropbox-chooser";
 import credentials from "./dropbox.json";
+import { requestAuthPost } from "./hooks";
 
 const Programme = () => {
   const APP_KEY = credentials.app_key;
 
+  const history = useHistory();
+
   const [url, setUrl] = useState("");
   function handleSuccess(files) {
-    setUrl(files[0].thumbnailLink);
+    console.log(files);
+    setUrl(files[0].link);
     console.log(url);
   }
 
+  const onSubmitDocument = async (e) => {
+    e.preventDefault();
+    console.log(url);
+    try {
+      const response = await requestAuthPost("approvals", {
+        documenturl: url,
+        programmeid: localStorage.getItem("programmeid"),
+        departmentid: localStorage.getItem("department"),
+      });
+      console.log(response);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className="prog">
-      <form className="programme">
+      <form className="programme" onSubmit={onSubmitDocument}>
         <h1>University Requirement</h1>
         <h3>Provide the following Details**</h3>
-        <div className="top__input">
-          <TextField
-            required
-            id="outlined-basic"
-            label="Programme Type"
-            variant="outlined"
-          />
-          <TextField
-            required
-            id="outlined-basic"
-            label="Programme Name"
-            variant="outlined"
-          />
-          <TextField
-            required
-            id="outlined-basic"
-            label="Department"
-            variant="outlined"
-          />
-        </div>
         <hr />
         <div className="list">
           <ul>
@@ -207,20 +207,22 @@ const Programme = () => {
                 appKey={APP_KEY}
                 success={handleSuccess}
                 cancel={() => console.log("closed")}
-                multiselect={true}
               >
-                <button>Upload or Choose Files</button>
-                <div className="dropbox"></div>
-                <br />
-                <br />
-                {url}
+                <span>Upload or Choose Files</span>
               </DropboxChooser>
+              {url}
             </div>
           </ul>
         </div>
         <div className="btn">
-          <button>Save</button>
-          <button>Save and Submit </button>
+          <button type="submit">Save and Submit </button>
+          <button
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            Next
+          </button>
         </div>
       </form>
     </div>

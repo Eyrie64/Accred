@@ -12,12 +12,14 @@ import Avatar from "@material-ui/core/Avatar";
 import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import HomeIcon from "@material-ui/icons/Home";
 import { requestAuthPost, signOut } from "./hooks";
+import { useAlert } from "react-alert";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPw, setCurrentPw] = useState("");
   const [newPw, setNewPw] = useState("");
   const [confirmPw, setConfirmPw] = useState("");
+  const alert = useAlert();
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
@@ -32,12 +34,12 @@ const Header = () => {
         newpass: newPw,
       }).then((res) => {
         console.log(res);
-        alert("Password successfully updated.");
+        alert.success("PASSWORD SUCCESSFULLY UPDATED.");
       });
 
       return;
     }
-    alert("New password does not match confirmation.");
+    alert.error("NEW PASSWORD DOES NOT MATCH CONFIRMATION.");
   };
 
   const getInput = (setter) => (e) => setter(e.target.value);

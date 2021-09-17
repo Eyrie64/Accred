@@ -6,6 +6,7 @@ import Popup from "./Popup";
 import DataTable from "react-data-table-component";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import { requestAuthGet, requestAuthPost } from "./hooks";
+import { useAlert } from "react-alert";
 
 export default function Users() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Users() {
   const [departments, setDepartments] = useState([]);
   const [newUser, setNewUser] = useState({});
   const [newUserAdded, setNewUserAdded] = useState(false);
+  const alert = useAlert();
 
   const sortIcon = <ArrowDownward />;
 
@@ -90,8 +92,10 @@ export default function Users() {
     try {
       await requestAuthPost("users", newUser);
       setNewUserAdded(true);
+      alert.success("USER ADDED!");
     } catch (e) {
       setNewUserAdded(false);
+      alert.error("NO USER ADDED!");
     }
   };
 
@@ -109,9 +113,7 @@ export default function Users() {
             <SearchIcon className="user__searchIcon" />
           </div>
           <div className="user__btn">
-            <button type="button" className="btn" onClick={togglePopup}>
-              ADD
-            </button>
+            <button onClick={togglePopup}>ADD</button>
 
             {isOpen && (
               <Popup
@@ -135,6 +137,9 @@ export default function Users() {
                           <option value="Registrar">Registrar</option>
                           <option value="Director of Academic Affairs">
                             Director of Academic Affairs
+                          </option>
+                          <option value="Director of Academic Quality Assurance">
+                            Director of Academic Quality Assurance
                           </option>
                           <option value="Provost of College">Provost</option>
                           <option value="Dean of School/Director">
@@ -181,9 +186,7 @@ export default function Users() {
               />
             )}
 
-            <button className="btn" style={{ marginLeft: 5 }}>
-              DELETE
-            </button>
+            <button>DELETE</button>
           </div>
         </div>
         <div className="usertable" style={{ height: 400, width: "50%" }}>

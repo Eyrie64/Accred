@@ -1,28 +1,13 @@
+import { useEffect } from "react";
 import "./Update.css";
-import TextField from "@material-ui/core/TextField";
 
 const ExisUpdate = () => {
+  useEffect(async () => {}, []);
   return (
     <div className="update">
       <form>
-        <h2>UPDATE EXISITNG PROGRAMME </h2>
-        <div className ="top__input">
-          <TextField
-            id="outlined-basic"
-            label="Programme Type"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Programme Name"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Department Name"
-            variant="outlined"
-          />
-        </div>
+        <h2>UPDATE EXISTING PROGRAMME </h2>
+        <div className="top__input"></div>
         <div className="bottom_down">
           <label>
             NAB Submit:

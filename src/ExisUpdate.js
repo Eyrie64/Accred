@@ -6,23 +6,7 @@ const ExisUpdate = () => {
     <div className="update">
       <form>
         <h2>UPDATE EXISITNG PROGRAMME </h2>
-        <div className ="top__input">
-          <TextField
-            id="outlined-basic"
-            label="Programme Type"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Programme Name"
-            variant="outlined"
-          />
-          <TextField
-            id="outlined-basic"
-            label="Department Name"
-            variant="outlined"
-          />
-        </div>
+        <div className="top__input"></div>
         <div className="bottom_down">
           <label>
             NAB Submit:

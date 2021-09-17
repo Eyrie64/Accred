@@ -25,6 +25,10 @@ export const requestAuthPost = async (url = "", body = {}) => {
     .then((res) => res.data);
 };
 
+export const requestAuthDelete = async (url = "") => {
+  return await axios.delete(baseUrl + url, GETConfig).then((res) => res.data);
+};
+
 export const signOut = () => {
   localStorage.clear();
   window.location.reload();

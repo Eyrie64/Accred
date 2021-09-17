@@ -43,7 +43,15 @@ const routes = {
     "/external-status",
     "/existing-status",
   ],
-  Provost: [
+  "Provost of College": [
+    "/",
+    "/notifications",
+    "/message",
+    "/status",
+    "/external-status",
+    "/existing-status",
+  ],
+  "Director of Academic Quality Assurance": [
     "/",
     "/notifications",
     "/message",
@@ -67,6 +75,7 @@ const routes = {
     "/update",
     "/ugreq",
     "/status",
+    "/newform",
     "/external-status",
     "/existing-status",
     "/existingreq",

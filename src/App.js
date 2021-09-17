@@ -26,6 +26,7 @@ import ExisUpdate from "./ExisUpdate";
 import Header1 from "./HeaderSidebar";
 import routes from "./helpers/routes";
 import Notification from "./Notification";
+import Newform from "./NewForm";
 
 function PrivateRoute({ children, ...rest }) {
   const { isAuthenticated } = useContext(AuthContext);
@@ -37,7 +38,7 @@ function PrivateRoute({ children, ...rest }) {
       {...rest}
       render={() => {
         if (isAuthenticated) {
-          if (!routes[user].includes(path)) {
+          if (!routes[user]?.includes(path)) {
             return <Redirect to="/" />;
           } else {
             return children;
@@ -70,7 +71,6 @@ function PublicRoute({ children, ...rest }) {
 
 const App = () => {
   const user = localStorage.getItem("user");
-  // const users = Object.keys(routes)
 
   return (
     <Router>
@@ -81,6 +81,10 @@ const App = () => {
         <PrivateRoute exact path="/exisupdate">
           <Header1 />
           <ExisUpdate />
+        </PrivateRoute>
+        <PrivateRoute exact path="/newform">
+          <Header1 />
+          <Newform />
         </PrivateRoute>
         <PrivateRoute exact path="/extupdate">
           <Header1 />

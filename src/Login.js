@@ -10,12 +10,14 @@ import image3 from "../src/Images/image3.jpg";
 import image4 from "../src/Images/image4.jpg";
 import image5 from "../src/Images/image5.jpg";
 import "./Login.css";
+import { useAlert } from "react-alert";
 
 const Login = () => {
   const [useremail, setuseremail] = useState("");
   const [psstype, setpsstype] = useState("");
   const { authenticate } = useContext(AuthContext);
   const history = useHistory();
+  const alert = useAlert();
 
   const login = (e) => {
     e.preventDefault();
@@ -28,11 +30,22 @@ const Login = () => {
         localStorage.setItem("token", res.data.data.token);
         localStorage.setItem("email", res.data.data.user.email);
         localStorage.setItem("user", res.data.data.user.user);
+        if (res.data.data.user.departmentid !== null) {
+          localStorage.setItem("department", res.data.data.user.departmentid);
+        }
+        if (res.data.data.user.schoolid !== null) {
+          localStorage.setItem("school", res.data.data.user.schoolid);
+        }
+        if (res.data.data.user.collegeid !== null) {
+          localStorage.setItem("college", res.data.data.user.collegeid);
+        }
+
         authenticate();
+        alert.success("Login Successful.");
         window.location.reload();
-        throw new Error();
+        //throw new Error();
       })
-      .catch(console.log);
+      .catch((e) => alert.error("Invalid Email/Password"));
   };
   return (
     <div className="login">

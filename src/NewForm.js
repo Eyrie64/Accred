@@ -1,18 +1,45 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import "./Status.css";
 import SearchIcon from "@material-ui/icons/Search";
 import DataTable from "react-data-table-component";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
-import TextField from "@material-ui/core/TextField";
+// import TextField from "@material-ui/core/TextField";
 import Popup from "./Popup";
+import { requestAuthPost } from "./hooks";
+import { useAlert } from "react-alert";
 
 const NewForm = () => {
   const [filterText, setFilterText] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [newProgrammeName, setNewProgrammeName] = useState();
+  const [newProgrammeType, setNewProgrammeType] = useState();
+  const alert = useAlert();
 
+  const history = useHistory();
   const sortIcon = <ArrowDownward />;
   const togglePopup = () => {
     setIsOpen(!isOpen);
+  };
+
+  const onAddProgramme = async (e) => {
+    e.preventDefault();
+    console.log("Add");
+    try {
+      const { data } = await requestAuthPost("programmes", {
+        type: newProgrammeType,
+        name: newProgrammeName,
+        departmentid: localStorage.getItem("department"),
+      });
+      localStorage.setItem("programmeid", data.id);
+      // setNewProgrammeAdd(true);
+      alert.success("PROGRAMME ADDED!");
+
+      history.push("/ugreq");
+    } catch (e) {
+      // setNewProgrammeAdd(false);
+      alert.error("NO PROGRAMME ADDED!");
+    }
   };
 
   const columns = [
@@ -105,32 +132,35 @@ const NewForm = () => {
         <div>
           <button onClick={togglePopup}>ADD NEW</button>
           <button> DELETE</button>
-          <button>UPDATE</button>
+          <button
+            onClick={() => {
+              history.push("/update");
+            }}
+          >
+            UPDATE
+          </button>
         </div>
         {isOpen && (
           <Popup
             content={
               <div className="content">
-                <form>
+                <form onSubmit={onAddProgramme}>
                   <div>
-                    <TextField
-                      required
-                      id="outlined-basic"
-                      label="Programme Type"
-                      variant="outlined"
+                    <input
+                      type="text"
+                      placeholder="Programme Type"
+                      onChange={(e) => {
+                        setNewProgrammeType(e.target.value);
+                      }}
                     />
-                    <TextField
-                      required
-                      id="outlined-basic"
-                      label="Programme Name"
-                      variant="outlined"
+                    <input
+                      type="text"
+                      placeholder="Programme Name"
+                      onChange={(e) => {
+                        setNewProgrammeName(e.target.value);
+                      }}
                     />
-                    <TextField
-                      required
-                      id="outlined-basic"
-                      label="Department"
-                      variant="outlined"
-                    />
+                    {/* <input type="text" placeholder = ""/> */}
                   </div>
                   <button type="submit">ADD PROGRAMME</button>
                 </form>
